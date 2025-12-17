@@ -228,7 +228,7 @@ export class JupiterIntegration {
 	 * Generate unique transaction ID
 	 */
 	private generateTransactionId(): string {
-		return `tx_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+		return `tx_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
 	}
 
 	/**

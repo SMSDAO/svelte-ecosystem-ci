@@ -205,10 +205,17 @@ The system generates the following miter signals based on contract analysis:
 ## Jupiter API Integration
 
 ### API Configuration
-- **API Key**: `d92068e7-00f8-4f44-a5d3-098a91cf28f7`
+- **API Key**: Configure via `JUPITER_API_KEY` environment variable
+  - Default reference key: `d92068e7-00f8-4f44-a5d3-098a91cf28f7`
 - **Basic API**: `https://quote-api.jup.ag/v6`
 - **Ultra API**: `https://lite.jup.ag/v6`
 - **Program Address**: `JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB`
+
+### Environment Variables
+Set the following environment variables for production use:
+```bash
+export JUPITER_API_KEY="your-api-key-here"
+```
 
 ### Features
 - Quote aggregation from multiple DEXs
@@ -334,7 +341,10 @@ The system is designed to support future Jupiter address routing with merged fal
 
 ## Security Considerations
 
-1. **API Key Security**: Store Jupiter API key securely in production
+1. **API Key Security**: 
+   - Store Jupiter API key in environment variables (`JUPITER_API_KEY`)
+   - Never commit API keys to source control
+   - Rotate keys regularly
 2. **Rate Limiting**: Implement rate limiting for public endpoints
 3. **Input Validation**: All inputs are validated before processing
 4. **Error Handling**: Comprehensive error handling with fallbacks

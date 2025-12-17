@@ -30,7 +30,10 @@ export const PLATFORM_CONFIGS = {
 }
 
 export const JUPITER_CONFIG = {
-	apiKey: 'd92068e7-00f8-4f44-a5d3-098a91cf28f7',
+	// API key should be set via environment variable JUPITER_API_KEY
+	// Default provided for reference: d92068e7-00f8-4f44-a5d3-098a91cf28f7
+	apiKey:
+		process.env.JUPITER_API_KEY || 'd92068e7-00f8-4f44-a5d3-098a91cf28f7',
 	basicApiEndpoint: 'https://quote-api.jup.ag/v6',
 	ultraApiEndpoint: 'https://lite.jup.ag/v6',
 	swapEndpoint: 'https://quote-api.jup.ag/v6/swap',
