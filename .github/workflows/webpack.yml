@@ -31,4 +31,4 @@ jobs:
     - name: Build
       run: |
         pnpm install
-        npx webpack
+        pnpx webpack
