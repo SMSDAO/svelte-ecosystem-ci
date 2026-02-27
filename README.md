@@ -2,6 +2,37 @@
 
 This repository is used to run integration tests for svelte ecosystem projects
 
+## 🔐 DeFi Backend Security Integration
+
+This repository now includes a comprehensive DeFi backend security system with real-time monitoring and safe transaction capabilities. See [backend/README.md](./backend/README.md) for complete documentation.
+
+### Key Features
+- **Platform Integration**: Support for Radium, ORCA, Pump, and Meteors with metadata tracking
+- **Rug Pull Checker**: Real-time smart contract monitoring with trust level indicators (🔴 Red, 🟡 Yellow, 🟢 Green)
+- **Wallet Transactions**: Secure Jupiter API integration for safe swap execution
+- **Contract Analysis**: Live safety assessment, profitability checking, and gas optimization
+
+### Quick Start
+```typescript
+import { rugPullEndpoints, walletEndpoints } from './backend/index.ts'
+
+// Check contract safety
+const check = await rugPullEndpoints.checkContract('contract-address')
+console.log(`Trust Level: ${check.data?.riskLevel}`)
+
+// Get safe swap quote
+const quote = await walletEndpoints.getQuote({
+  inputMint: 'token-in',
+  outputMint: 'token-out',
+  amount: 1000000,
+  useUltraApi: true
+})
+```
+
+---
+
+## Svelte Ecosystem CI
+
 ## via github workflow
 
 ### scheduled
